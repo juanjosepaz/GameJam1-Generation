@@ -13,10 +13,15 @@ public class RechargingLife : MonoBehaviour
         {
             LifePlayer lifePlayer = other.GetComponent<LifePlayer>();
 
-        if (lifePlayer != null)
-        {
+            if (lifePlayer != null)
+            {
                 lifePlayer.RechargingLife(increaseLife, maxLife);
+            }
+        }
+
+        if (other.TryGetComponent(out ControlDedisparo playerShoot))
+        {
+            playerShoot.Recharge();
         }
     }
-}
 }
