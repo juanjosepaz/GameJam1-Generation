@@ -5,7 +5,7 @@ using UnityEngine;
 public class eliminar : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float lims=30;
+  
   private GameObject Player;
     void Start()
     {
@@ -16,7 +16,7 @@ public class eliminar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PalyerControler script1 = Player.GetComponent<PalyerControler>();
+        ControlDedisparo script1 = Player.GetComponent<ControlDedisparo>();
          if (script1.disparo == false){
             Destroy(gameObject);
         }

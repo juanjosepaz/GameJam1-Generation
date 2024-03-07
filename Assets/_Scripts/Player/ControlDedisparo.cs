@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PalyerControler : MonoBehaviour
+public class ControlDedisparo : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject proyectil;
     public bool disparo=false;
+    //public float altura= 1.0f;
     void Start()
     {
         
@@ -15,17 +16,16 @@ public class PalyerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if(Input.GetKeyDown(KeyCode.Space)){
-
+         if(Input.GetMouseButtonDown(0)){
             disparo=true;
-           // proyectil.gameObject.SetActive(true);
             StartCoroutine(Eliminar());
         }
     }
    IEnumerator Eliminar(){
-        Instantiate(proyectil, transform.position, proyectil.transform.rotation);
-        yield return new WaitForSeconds(3);
+      Vector3 posicionProyectil = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
+        Instantiate(proyectil, posicionProyectil,transform.rotation);
+        yield return new WaitForSeconds(2);
         disparo=false;
-        //proyectil.gameObject.SetActive(false);
+       
     }
 }
