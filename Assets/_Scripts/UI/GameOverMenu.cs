@@ -12,6 +12,8 @@ public class GameOverMenu : MonoBehaviour
     [SerializeField] private float timeToSetItems;
     [SerializeField] private float timeBtwnTransitions;
 
+    /*
+    Test Input
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -19,6 +21,7 @@ public class GameOverMenu : MonoBehaviour
             EnableGameOverMenu();
         }
     }
+    */
 
     public void EnableGameOverMenu()
     {
@@ -32,6 +35,10 @@ public class GameOverMenu : MonoBehaviour
         yield return new WaitForSeconds(timeBtwnTransitions);
 
         LeanTween.alphaCanvas(gameOverMenuItemsCanvasGroup, 1f, timeToSetItems).setEase(gameOverMenuEaseType);
+
+        CanvasGroupBlockRaycast(backgroundCanvasGroup);
+
+        CanvasGroupBlockRaycast(gameOverMenuItemsCanvasGroup);
     }
 
     public void ReplayButton()
