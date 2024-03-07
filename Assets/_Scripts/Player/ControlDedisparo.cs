@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PalyerControler : MonoBehaviour
+public class ControlDedisparo : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject proyectil;
@@ -24,6 +24,6 @@ public class PalyerControler : MonoBehaviour
         Instantiate(proyectil, transform.position,transform.rotation);
         yield return new WaitForSeconds(2);
         disparo=false;
-        //proyectil.gameObject.SetActive(false);
+       
     }
 }
