@@ -7,6 +7,7 @@ public class ControlDedisparo : MonoBehaviour
     // Start is called before the first frame update
     public GameObject proyectil;
     public bool disparo=false;
+    //public float altura= 1.0f;
     void Start()
     {
         
@@ -21,7 +22,8 @@ public class ControlDedisparo : MonoBehaviour
         }
     }
    IEnumerator Eliminar(){
-        Instantiate(proyectil, transform.position,transform.rotation);
+      Vector3 posicionProyectil = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
+        Instantiate(proyectil, posicionProyectil,transform.rotation);
         yield return new WaitForSeconds(2);
         disparo=false;
        

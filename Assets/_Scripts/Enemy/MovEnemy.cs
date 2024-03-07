@@ -20,11 +20,22 @@ public class MovEnemy : MonoBehaviour
     void Update()
     {
         
-        //Vector3 lookDirection = transform.LookAt(playerGoal.transform);
-        //enemyRb.AddForce( lookDirection* speed );
+        
          transform.LookAt(playerGoal.transform);
          transform.position = Vector3.MoveTowards(transform.position, playerGoal.transform.position, speed*Time.deltaTime);
          
+    }
+    
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Proyectil")
+        {
+            Destroy(gameObject);
+            Destroy (other.gameObject);
+            
+
+        }
+        
+
     }
  }
 
