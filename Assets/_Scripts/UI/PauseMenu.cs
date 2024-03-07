@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
@@ -61,14 +60,14 @@ public class PauseMenu : MonoBehaviour
     {
         gamePaused = false;
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManagerObject.Instance.ReloadScene();
     }
 
     public void MainMenu()
     {
         gamePaused = false;
         Time.timeScale = 1f;
-        SceneManager.LoadScene(mainMenuBuildIndex);
+        SceneManagerObject.Instance.LoadScene(mainMenuBuildIndex);
     }
 
     private void InitialiceSoundSliders()
