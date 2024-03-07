@@ -15,7 +15,7 @@ public class PalyerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if(Input.GetKeyDown(KeyCode.Space)){
+         if(Input.GetMouseButtonDown(1)){
 
             disparo=true;
            // proyectil.gameObject.SetActive(true);
@@ -23,7 +23,7 @@ public class PalyerControler : MonoBehaviour
         }
     }
    IEnumerator Eliminar(){
-        Instantiate(proyectil, transform.position, proyectil.transform.rotation);
+        Instantiate(proyectil, transform.position,transform.rotation);
         yield return new WaitForSeconds(3);
         disparo=false;
         //proyectil.gameObject.SetActive(false);
