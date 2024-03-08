@@ -10,10 +10,11 @@ public class Spawn : MonoBehaviour
     private float spawnZMax = 25; // set max spawn Z
     public int enemyCount;
     public int waveCount = 1;
+    public YouWinGarabato youWinGarabato;
     // Start is called before the first frame update
     void Start()
     {
-        
+        youWinGarabato = FindObjectOfType<YouWinGarabato>();
     }
 
     // Update is called once per frame
@@ -23,8 +24,8 @@ public class Spawn : MonoBehaviour
         if (enemyCount == 0 && waveCount<=5 )
         {
             SpawnEnemyWave(3);
-        }else if(waveCount>5){
-            Debug.Log("ganaste!");
+        }else if(waveCount>5 && enemyCount == 0){
+            youWinGarabato.YouWin();
         }
     }
     void SpawnEnemyWave(int enemiesToSpawn)
