@@ -24,7 +24,7 @@ public class Spawn : MonoBehaviour
         if (enemyCount == 0 && waveCount<=5 )
         {
             SpawnEnemyWave(3);
-        }else if(waveCount>5){
+        }else if(waveCount>5 && enemyCount == 0){
             youWinGarabato.YouWin();
         }
     }
