@@ -14,6 +14,8 @@ public class LifePlayer : MonoBehaviour
 
     public Animator animator;
 
+    public AudioClip danioCat;
+
     private void Start() {
         actualLife=maxLife;
         slider.value = actualLife;
@@ -33,10 +35,15 @@ public class LifePlayer : MonoBehaviour
         actualLife --;
         slider.value = actualLife;
 
+
+
         if (actualLife <=0){
             animator.SetTrigger("Death");
             gameOver.EnableGameOverMenu();
 
+        }
+        else { 
+            SoundManager.Instance.PlaySoundFx(danioCat);
         }
     }
 

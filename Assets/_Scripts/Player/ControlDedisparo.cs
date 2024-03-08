@@ -16,6 +16,8 @@ public class ControlDedisparo : MonoBehaviour
     public UnityEvent OnPlayerShoot;
     public UnityEvent OnPlayerRecharge;
 
+    public AudioClip shotSound;
+
     private void Awake()
     {
         actualBulletAmount = maxBulletAmount;
@@ -38,6 +40,7 @@ public class ControlDedisparo : MonoBehaviour
             Instantiate(proyectil, posicionProyectil, transform.rotation);
             actualBulletAmount -= 1;
             OnPlayerShoot.Invoke();
+            SoundManager.Instance.PlaySoundFx(shotSound);
         }
     }
 
