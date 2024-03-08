@@ -39,6 +39,9 @@ public class GameOverMenu : MonoBehaviour
         CanvasGroupBlockRaycast(backgroundCanvasGroup);
 
         CanvasGroupBlockRaycast(gameOverMenuItemsCanvasGroup);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void ReplayButton()

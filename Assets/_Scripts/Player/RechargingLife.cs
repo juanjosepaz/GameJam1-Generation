@@ -9,15 +9,6 @@ public class RechargingLife : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            LifePlayer lifePlayer = other.GetComponent<LifePlayer>();
-
-            if (lifePlayer != null)
-            {
-                lifePlayer.RechargingLife(increaseLife, maxLife);
-            }
-        }
 
         if (other.TryGetComponent(out ControlDedisparo playerShoot))
         {
