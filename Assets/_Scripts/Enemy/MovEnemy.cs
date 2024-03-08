@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class MovEnemy : MonoBehaviour
@@ -9,11 +10,13 @@ public class MovEnemy : MonoBehaviour
     private Rigidbody enemyRb;
     private GameObject playerGoal;
     
+    
     void Start()
     {
-        
+         
         enemyRb = GetComponent<Rigidbody>();
         playerGoal = GameObject.Find("Player");
+        
     }
 
     // Update is called once per frame
@@ -29,6 +32,9 @@ public class MovEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Proyectil")
         {
+            GameObject ene = GameObject.Find("cont");
+            cont contene = ene.GetComponent<cont>();
+            contene.Enemigo();
             Destroy(gameObject);
             Destroy (other.gameObject);
             
