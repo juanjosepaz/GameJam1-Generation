@@ -32,7 +32,7 @@ public class MovEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Proyectil")
         {
-            GameObject ene = GameObject.Find("cont");
+            GameObject ene = GameObject.Find("contados");
             cont contene = ene.GetComponent<cont>();
             contene.Enemigo();
             Destroy(gameObject);
