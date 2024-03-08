@@ -9,6 +9,8 @@ public class MovEnemy : MonoBehaviour
     public float speed=5;
     private Rigidbody enemyRb;
     private GameObject playerGoal;
+
+    public AudioClip impact;
     
     
     void Start()
@@ -37,7 +39,8 @@ public class MovEnemy : MonoBehaviour
             contene.Enemigo();
             Destroy(gameObject);
             Destroy (other.gameObject);
-            
+
+            SoundManager.Instance.PlaySoundFx(impact);
 
         }
         
